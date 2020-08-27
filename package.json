@@ -1,0 +1,16 @@
+{
+  "name": "byte-decoder",
+  "version": "1.0.10",
+  "description": "byte-decoder niceeeeee",
+  "main": "app.js",
+  "author": {
+    "name": "lilabyte"
+  },
+  "bin": {
+    "byte_decoder": "app.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs": "0.0.1-security"
+  }
+}
