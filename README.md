@@ -1,5 +1,5 @@
 # FiveM deXFuscator
-This project is no longer supported. If you want me to do FiveM resource deobfuscator for another obfuscation method PM me on discord lilabyte#4633. If you want to make your extension for this deobfuscator just make a pull request I will add it.
+This project was made in 2018 and is no longer supported. Code is ugly and outdated so it's on github only for memories.
 
 ## Requirements
 * Node.js with NPM
