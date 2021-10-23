@@ -9,8 +9,7 @@ This project was made in 2018 and is no longer supported. Code is ugly and outda
 2. Unpack fivem-deXFuscator
 3. Open Node.js Command Prompt and go to your fivem-deXFuscator directory
 4. Run `npm i -g` command
-5. Run `byte_decoder help` command
+5. Run `fivem_dexfuscator help` command
 
 ## Use
-1. Move your xFuscator obfuscated file to fivem-deXFuscator/queue directory
-2. Run `byte_decoder decode xfuscator file_name.lua`
+`fivem_dexfuscator deobfuscate file_name.lua`

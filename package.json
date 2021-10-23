@@ -5,7 +5,7 @@
     "description": "Remastered 2018 deobfuscator for xFuscator.",
     "main": "app.js",
     "bin": {
-        "byte_decoder": "app.js"
+        "fivem_dexfuscator": "app.js"
     },
     "dependencies": {
         "chalk": "^3.0.0"
