@@ -1,24 +1,38 @@
-const chalk = require("chalk")
-const decoder = require("./modules/decoder")
-const initializer = require("./modules/initializer")
+const fs = require('fs');
+const chalk = require(`chalk`);
+const deobfuscator = require(`./modules/deobfuscator`);
 
-console.clear()
+(async function() {
+    if (process.argv.slice(2).length > 0) {
+        let command = process.argv.slice(2)[0].toLowerCase();
+        let args = process.argv.slice(3);
 
-if (process.argv.slice(2).length > 0) {
-    var command = process.argv.slice(2)[0]
-    var args = process.argv.slice(3);
-    if (command == "decode") {
-        initializer.Initialize((cb) => {
-            decoder.Decode(args[1], args[0])
-        })
-    } else if (command == "help") {
-        console.log("Usage: byte_decoder decode <type> <file>")
-        console.log("Commands:")
-        console.log(chalk.yellow.bold("   decode <type> <file>"))
-        console.log(chalk.yellow.bold("   help"))
+        if (command == `deobfuscate`) {
+            let filePath = args[0];
+
+            if (!filePath || !filePath.length > 0) {
+                console.log(chalk.red.bold(`You didn't passed any file to deobfuscate.`));
+                return;
+            }
+
+            if (fs.existsSync(filePath)) {
+                if (filePath.split(`.`).pop() == 'lua') {
+                    deobfuscator.run(filePath);
+                } else {
+                    console.log(chalk.red.bold(`FiveM DeXFuscator only supports .lua files.`))
+                }
+            } else {
+                console.log(chalk.red.bold(`Couldn't find ${filePath}`));
+            }
+        } else if (command == `help`) {
+            console.log(`Usage: byte_decoder deobfuscate <file>`)
+            console.log(`Commands:`)
+            console.log(chalk.yellow.bold(`   dobfuscate <file>`))
+            console.log(chalk.yellow.bold(`   help`))
+        } else {
+            console.log(chalk.red.bold(`You used a command that doesn't exist.\n`) + chalk.yellow.bold(`Use: byte_decoder help`));
+        }
     } else {
-        console.log(chalk.red.bold("You didn't passed any command!\n") + chalk.yellow.bold("Use: byte_decoder help"))
+        console.log(chalk.red.bold(`You didn't used any command.\n`) + chalk.yellow.bold(`Use: byte_decoder help`));
     }
-} else {
-    console.log(chalk.red.bold("You didn't passed any command!\n") + chalk.yellow.bold("Use: byte_decoder help"))
-}
+})();
