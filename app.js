@@ -25,14 +25,14 @@ const deobfuscator = require(`./modules/deobfuscator`);
                 console.log(chalk.red.bold(`Couldn't find ${filePath}`));
             }
         } else if (command == `help`) {
-            console.log(`Usage: byte_decoder deobfuscate <file>`)
+            console.log(`Usage: fivem_dexfuscator deobfuscate <file>`)
             console.log(`Commands:`)
             console.log(chalk.yellow.bold(`   dobfuscate <file>`))
             console.log(chalk.yellow.bold(`   help`))
         } else {
-            console.log(chalk.red.bold(`You used a command that doesn't exist.\n`) + chalk.yellow.bold(`Use: byte_decoder help`));
+            console.log(chalk.red.bold(`You used a command that doesn't exist.\n`) + chalk.yellow.bold(`Use: fivem_dexfuscator help`));
         }
     } else {
-        console.log(chalk.red.bold(`You didn't used any command.\n`) + chalk.yellow.bold(`Use: byte_decoder help`));
+        console.log(chalk.red.bold(`You didn't used any command.\n`) + chalk.yellow.bold(`Use: fivem_dexfuscator help`));
     }
 })();
